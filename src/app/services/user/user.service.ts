@@ -27,22 +27,28 @@ export class UserService {
 
   getUsers(page: number, size: number): Observable<any[]> {
     const headers = this.getHeaders();
-    return this.httpClient.get<any>(`${this.baseUrl}/getUsers?page=${page}&size=${size}`,{ headers }).pipe(map((page: any) => page.content));
+    return this.httpClient.get<any>(`${this.baseUrl}/getUsers?page=${page}&size=${size}`, { headers }).pipe(map((page: any) => page.content));
   }
 
   getUserByEmail(email: string): Observable<UserDTO> {
     const headers = this.getHeaders();
-    return this.httpClient.get<UserDTO>(`${this.baseUrl}/email/${email}`,{ headers });
+    return this.httpClient.get<UserDTO>(`${this.baseUrl}/email/${email}`, { headers });
   }
 
   getUserByUsername(username: string): Observable<UserDTO> {
     const headers = this.getHeaders();
-    return this.httpClient.get<UserDTO>(`${this.baseUrl}/${username}`,{ headers });
+    return this.httpClient.get<UserDTO>(`${this.baseUrl}/${username}`, { headers });
   }
 
   getMyUser(): Observable<UserDTO> {
     const headers = this.getHeaders();
     return this.httpClient.get<UserDTO>(`${this.baseUrl}/me`, { headers });
+  }
+
+  isUserAdmin(): Observable<boolean> {
+    return this.getMyUser().pipe(
+      map((user) => user.role === 'ADMIN')
+    );
   }
 
 

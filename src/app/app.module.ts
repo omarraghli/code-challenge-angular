@@ -7,8 +7,11 @@ import { DataTableComponent } from './components/data-table/data-table.component
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginFormComponent } from './main-components/login-form/login-form.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MyPageComponent } from './main-components/my-page/my-page.component';
+import { UserDetailsComponent } from './components/user-details/user-details.component';
+import { UserSearchComponent } from './main-components/user-search/user-search.component';
+import { HomeComponent } from './main-components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +20,16 @@ import { MyPageComponent } from './main-components/my-page/my-page.component';
     NavBarComponent,
     LoginFormComponent,
     MyPageComponent,
+    UserDetailsComponent,
+    UserSearchComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration()

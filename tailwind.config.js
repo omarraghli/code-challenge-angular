@@ -4,7 +4,11 @@ module.exports = {
     "./src/**/*.{html,ts}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        'smd': '900px', // Add your custom screen size and width
+      },
+    },
   },
   plugins: [],
 }

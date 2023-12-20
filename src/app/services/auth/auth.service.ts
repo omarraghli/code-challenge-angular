@@ -15,4 +15,15 @@ export class AuthService {
   authenticateUser(authenticationRequest: any): Observable<AuthResponseDTO> {
     return this.httpClient.post<AuthResponseDTO>(`${this.baseUrl}`, authenticationRequest);
   }
+
+
+  logout(): void {
+    // Check if the token exists in localStorage before attempting to delete
+    if (localStorage.getItem('accessToken')) {
+      // Remove the item from localStorage
+      localStorage.removeItem('accessToken');
+    } else {
+      console.log('Item not found in localStorage.');
+    }
+  }
 }

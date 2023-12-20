@@ -1,5 +1,3 @@
-import { Role } from "./role";
-
 export interface UserDTO {
     firstName: string;
     lastName: string;
@@ -13,7 +11,8 @@ export interface UserDTO {
     username: string;
     email: string;
     password: string;
-    role: Role;
+    //role: Role;
+    role: string;
   }
   
 

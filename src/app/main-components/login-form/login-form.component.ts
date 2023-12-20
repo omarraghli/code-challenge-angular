@@ -38,7 +38,7 @@ export class LoginFormComponent {
       this.authSub = this.authService.authenticateUser(authenticationRequest).subscribe(
         (authResponse: AuthResponseDTO) => {
           localStorage.setItem('accessToken', authResponse.accessToken as string);
-          this.router.navigate(['/me']);
+          this.router.navigate(['/home']);
 
         },
         (error) => {
