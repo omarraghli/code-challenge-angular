@@ -12,6 +12,8 @@ import { MyPageComponent } from './main-components/my-page/my-page.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { UserSearchComponent } from './main-components/user-search/user-search.component';
 import { HomeComponent } from './main-components/home/home.component';
+import { ImportUserComponent } from './main-components/import-user/import-user.component';
+import { GetAllUsersComponent } from './main-components/get-all-users/get-all-users.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { HomeComponent } from './main-components/home/home.component';
     UserDetailsComponent,
     UserSearchComponent,
     HomeComponent,
+    ImportUserComponent,
+    GetAllUsersComponent,
   ],
   imports: [
     BrowserModule,

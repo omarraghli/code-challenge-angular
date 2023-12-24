@@ -9,8 +9,8 @@
                     <input formControlName="email" id="email" type="text" required
                         class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                         placeholder="Email" />
-                    <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-red-500">
-                        <div *ngIf="email.errors?.['required']">Email or Username is required.</div>
+                    <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-red-500 font-semibold ml-2">
+                        <div *ngIf="email.errors?.['required']">Email or Username is required</div>
                     </div>
                 </div>
                 <div>
@@ -18,8 +18,8 @@
                     <input formControlName="password" id="password" type="password" required
                         class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                         placeholder="Password" />
-                    <div *ngIf="password.invalid && (password.dirty || password.touched)" class="text-red-500">
-                        <div *ngIf="password.errors?.['required']">Password is required.</div>
+                    <div *ngIf="password.invalid && (password.dirty || password.touched)" class="text-red-500 font-semibold ml-2">
+                        <div *ngIf="password.errors?.['required']">Password is required</div>
                     </div>
                 </div>
             </div>

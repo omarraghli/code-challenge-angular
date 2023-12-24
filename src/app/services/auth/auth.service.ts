@@ -9,7 +9,6 @@ import { AuthResponseDTO } from '../../interfaces/auth-response-dto';
 export class AuthService {
 
   private baseUrl = 'http://localhost:9090/api/auth';
-
   constructor(private httpClient: HttpClient) { }
 
   authenticateUser(authenticationRequest: any): Observable<AuthResponseDTO> {
@@ -18,12 +17,21 @@ export class AuthService {
 
 
   logout(): void {
-    // Check if the token exists in localStorage before attempting to delete
-    if (localStorage.getItem('accessToken')) {
-      // Remove the item from localStorage
-      localStorage.removeItem('accessToken');
-    } else {
-      console.log('Item not found in localStorage.');
+    if (typeof window !== 'undefined') {
+      // Check if the token exists in localStorage before attempting to delete
+      if (localStorage.getItem('accessToken')) {
+        // Remove the item from localStorage
+        localStorage.removeItem('accessToken');
+      } else {
+        console.log('Item not found in localStorage.');
+      }
+
+      if (localStorage.getItem('userRole')) {
+        // Remove the item from localStorage
+        localStorage.removeItem('userRole');
+      } else {
+        console.log('Item not found in localStorage.');
+      }
     }
   }
 }
